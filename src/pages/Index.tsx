@@ -2,14 +2,19 @@ import { Token3D } from "@/components/Token3D";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { TokenCalculator } from "@/components/TokenCalculator";
 import { Button } from "@/components/ui/button";
+import { BuyGuide } from "@/components/BuyGuide";
+import { TokenMetrics } from "@/components/TokenMetrics";
+import { BackgroundAnimation } from "@/components/BackgroundAnimation";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-crypto-dark to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-crypto-dark to-black text-white relative">
+      <BackgroundAnimation />
+      
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="space-y-6 animate-fade-in">
             <h1 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-crypto-primary to-crypto-secondary">
               ComplianceAI Presale
             </h1>
@@ -32,26 +37,15 @@ const Index = () => {
         <CountdownTimer />
       </div>
 
-      {/* Token Info */}
+      {/* Token Metrics */}
+      <TokenMetrics />
+
+      {/* Buy Guide */}
+      <BuyGuide />
+
+      {/* Token Calculator Section */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold">Token Metrics</h2>
-            <div className="grid gap-4">
-              <div className="bg-crypto-dark p-4 rounded-lg">
-                <div className="text-sm text-gray-400">Total Supply</div>
-                <div className="text-xl font-bold">100,000,000 CMAI</div>
-              </div>
-              <div className="bg-crypto-dark p-4 rounded-lg">
-                <div className="text-sm text-gray-400">Presale Price</div>
-                <div className="text-xl font-bold">0.1 USDT</div>
-              </div>
-              <div className="bg-crypto-dark p-4 rounded-lg">
-                <div className="text-sm text-gray-400">Minimum Purchase</div>
-                <div className="text-xl font-bold">100 USDT</div>
-              </div>
-            </div>
-          </div>
+        <div className="max-w-md mx-auto">
           <TokenCalculator />
         </div>
       </div>
@@ -74,7 +68,7 @@ const Index = () => {
               description: "Benefit from the expanding compliance AI market"
             }
           ].map((feature) => (
-            <div key={feature.title} className="bg-crypto-dark p-6 rounded-lg">
+            <div key={feature.title} className="bg-crypto-dark/50 backdrop-blur-lg p-6 rounded-lg border border-crypto-primary/20 hover:border-crypto-primary/40 transition-all group animate-fade-in">
               <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
               <p className="text-gray-400">{feature.description}</p>
             </div>
