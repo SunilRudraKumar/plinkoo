@@ -6,10 +6,13 @@ import { BuyGuide } from "@/components/BuyGuide";
 import { TokenMetrics } from "@/components/TokenMetrics";
 import { BackgroundAnimation } from "@/components/BackgroundAnimation";
 import { TypewriterText } from "@/components/TypewriterText";
+import { ScrollTracer } from "@/components/ScrollTracer";
+import { Roadmap } from "@/components/Roadmap";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-crypto-dark to-black text-white relative">
+      <ScrollTracer />
       <BackgroundAnimation />
       
       {/* Hero Section */}
@@ -45,6 +48,9 @@ const Index = () => {
 
       {/* Token Metrics */}
       <TokenMetrics />
+
+      {/* Roadmap Section */}
+      <Roadmap />
 
       {/* Buy Guide */}
       <BuyGuide />
